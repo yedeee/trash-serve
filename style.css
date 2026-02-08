@@ -1,0 +1,141 @@
+/* total darkness for your basement vibe */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #050505;
+    color: #888;
+    padding: 40px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* the big red header */
+h1 {
+    color: #cc0000;
+    text-transform: lowercase;
+    margin-bottom: 10px;
+    letter-spacing: -1px;
+    font-size: 2rem;
+}
+
+#vidCount {
+    font-size: 0.8rem;
+    margin-bottom: 30px;
+    color: #444;
+}
+
+/* standard desktop searcher */
+#theSearcher {
+    width: 100%;
+    max-width: 800px;
+    padding: 15px;
+    margin-bottom: 40px;
+    background: #111;
+    border: 1px solid #222;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+    display: block;
+}
+
+#theSearcher:focus {
+    outline: none;
+    border-color: #cc0000;
+}
+
+/* 2-column flex layout for desktop */
+#vidList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+}
+
+.card {
+    flex: 0 0 calc(50% - 10px);
+    margin-bottom: 50px;
+    border-bottom: 1px solid #111;
+    padding-bottom: 30px;
+}
+
+.vidName {
+    font-family: monospace;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    color: #666;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+video {
+    width: 100%;
+    border-radius: 6px;
+    background: #000;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border: 1px solid #1a1a1a;
+    display: block;
+}
+
+/* custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #050505;
+}
+::-webkit-scrollbar-thumb {
+    background: #222;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #cc0000;
+}
+
+/* BIG UI FOR MOBILE DETECTION
+   Triggers for touch devices (phones/tablets)
+*/
+@media (pointer: coarse) {
+    body {
+        padding: 20px; /* slightly more room on edges */
+    }
+
+    h1 {
+        font-size: 2.5rem; /* much bigger branding */
+        margin-top: 10px;
+    }
+
+    #vidCount {
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
+
+    #theSearcher {
+        padding: 20px;     /* huge touch target */
+        font-size: 1.4rem;  /* much larger text for mobile input */
+        margin-bottom: 50px;
+        border-radius: 12px;
+    }
+
+    .card {
+        flex: 0 0 100%;    /* single column is a must for "big" UI */
+        margin-bottom: 60px;
+        padding-bottom: 40px;
+    }
+
+    .vidName {
+        font-size: 1.1rem;  /* readable filenames without squinting */
+        white-space: normal;
+        word-break: break-word;
+        color: #aaa;        /* brighter for easier reading on low brightness */
+        margin-bottom: 15px;
+    }
+
+    video {
+        border-radius: 10px; /* softer look for the big layout */
+    }
+}

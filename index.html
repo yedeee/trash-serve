@@ -1,0 +1,45 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <link rel="icon" type="image/png" href="lol.png">
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <h1>trash video library</h1>
+        <input type="text" id="theSearcher" onkeyup="findTheVids()" placeholder="search for a video if you can even spell">
+        <p id="vidCount">found 2 videos because you clearly have too much free time</p>
+        <div id="vidList">
+    
+            <div class="card">
+                <p class="vidName">bbb.mp4</p>
+                <video controls preload="metadata" poster="thumbs/bbb.jpg">
+                    <source src="video/bbb.mp4" type="video/mp4">
+                </video>
+            </div>
+        
+            <div class="card">
+                <p class="vidName">kag1.mp4</p>
+                <video controls preload="metadata" poster="thumbs/kag1.jpg">
+                    <source src="video/kag1.mp4" type="video/mp4">
+                </video>
+            </div>
+        
+        </div>
+        <script>
+        function findTheVids() {
+            let input = document.getElementById('theSearcher').value.toLowerCase();
+            let cards = document.getElementsByClassName('card');
+            for (let i = 0; i < cards.length; i++) {
+                let name = cards[i].getElementsByClassName('vidName')[0].innerText;
+                if (name.includes(input)) {
+                    cards[i].style.display = "";
+                } else {
+                    cards[i].style.display = "none";
+                }
+            }
+        }
+        </script>
+    </body>
+    </html>
+    
